@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8;charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=1" />
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="canonical" href="https://duckduckgo.com/">
+    <link rel="stylesheet" href="https://duckduckgo.com/s1356.css" type="text/css">
+    <link rel="stylesheet" href="https://duckduckgo.com/t1356.css" type="text/css">
+    <link rel="shortcut icon" href="https://duckduckgo.com/favicon.ico" type="image/x-icon" sizes="16x16 24x24 32x32 64x64"/>
+    <link rel="apple-touch-icon" href="https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_60x60.png"/>
+    <link rel="apple-touch-icon" sizes="76x76" href="https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_76x76.png"/>
+    <link rel="apple-touch-icon" sizes="120x120" href="https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_120x120.png"/>
+    <link rel="apple-touch-icon" sizes="152x152" href="https://duckduckgo.com/assets/icons/meta/DDG-iOS-icon_152x152.png"/>
+    <link rel="image_src" href="https://duckduckgo.com/assets/icons/meta/DDG-icon_256x256.png"/>
+    <link rel="manifest" href="https://duckduckgo.com/manifest.json"/>
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" value="@duckduckgo">
+    <meta property="og:url" content="https://duckduckgo.com/" />
+    <meta property="og:site_name" content="DuckDuckGo" />
+    <meta property="og:image" content="https://duckduckgo.com/assets/logo_social-media.png">
+    <title>DuckDuckGo</title>
+    <meta property="og:title" content="DuckDuckGo" />
+    <meta property="og:description" content="DuckDuckGo is the search engine that doesn't track you. We protect your search history from everyone – even us!">
+    <meta name="description" content="DuckDuckGo is the search engine that doesn't track you. We protect your search history from everyone – even us!">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400" rel="stylesheet">
+  </head>
+  <body id="pg-index" class="page-index body--home">
+    <style>
+      #duckduckgo {
+        font-family: 'Open Sans', sans-serif;
+        font-size: 32px;
+        color: #4C4C4C;
+        font-weight: 400;
+        text-align: center;
+      }
+
+      #copyright {
+        position: absolute;
+        bottom: 25px;
+        width: 100%;
+        text-align: center;
+        color: #9A9A9A;
+      }
+
+      #loading-bar {
+        display: none;
+        height: 25px;
+        width: 400px;
+        padding: 0px;
+        text-align: center;
+        border-radius: 5px;
+        border: 1px solid #9A9A9A;
+        color: #9A9A9A;
+        margin: 0 auto;
+        margin-top: 25px;
+      }
+
+      #progress {
+        background-color: #65BC46;
+        width: 0px;
+        height: 25px;
+        margin-bottom: 5px;
+      }
+
+      .rotating {
+        -webkit-animation: rotating-function 2s linear infinite;
+           -moz-animation: rotating-function 2s linear infinite;
+            -ms-animation: rotating-function 2s linear infinite;
+             -o-animation: rotating-function 2s linear infinite;
+                animation: rotating-function 2s linear infinite;
+      }
+
+      @-webkit-keyframes rotating-function {
+        from { -webkit-transform: rotate(0deg); }
+        to { -webkit-transform: rotate(360deg); }
+      }
+      @-moz-keyframes rotating-function {
+        from { -moz-transform: rotate(0deg); }
+        to { -moz-transform: rotate(360deg); }
+      }
+      @-ms-keyframes rotating-function {
+        from { -ms-transform: rotate(0deg); }
+        to { -ms-transform: rotate(360deg); }
+      }
+      @-o-keyframes rotating-function {
+        from { -o-transform: rotate(0deg); }
+        to { -o-transform: rotate(360deg); }
+      }
+      @keyframes rotating-function {
+        from { transform: rotate(0deg); }
+        to { transform: rotate(360deg); }
+      }
+    </style>
+  	<script type="text/javascript">
+      document.addEventListener("DOMContentLoaded", function(event) {
+        var logo = document.getElementById("logo_homepage_link");
+        logo.style.backgroundImage = "url(http://duckduckbordeaux.com/ddg.png)";
+        logo.style.backgroundSize = "120px 120px";
+        logo.style.height = "150px";
+      });
+
+      function load(e) {
+        document.getElementById("logo_homepage_link").classList.add("rotating");
+        document.getElementById("loading-bar").style.display = "block";
+        recursiveIncrement(0);
+        e = e || window.event;
+        e.preventDefault();
+        return false;
+      }
+
+      function recursiveIncrement(n) {
+        var percent = document.getElementById('percent');
+        var progress = document.getElementById('progress');
+        percent.textContent = n;
+        progress.style.width = ((n / 100) * 400).toString() + 'px';
+        n += 1;
+        if (Math.random() < 0.1) n -= parseInt(Math.random() * 4);
+        setTimeout(function() {
+          if (n < 100) {
+            recursiveIncrement(n);
+          } else {
+            var form = document.getElementById("search_form_homepage");
+            form.action = "https://duckduckgo.com/" + document.getElementById("search_form_input_homepage").value;
+            form.submit();
+          }
+        }, n ** 1.4);
+      }
+    </script>
+  	<div class="site-wrapper  site-wrapper--home  js-site-wrapper">
+			<div class="header-wrap--home  js-header-wrap"></div>
+			<div id="" class="content-wrap--home">
+			  <div id="content_homepage" class="content--home">
+				  <div class="cw--c">
+            <div class="logo-wrap--home">
+        			<a id="logo_homepage_link" class="logo_homepage" href="https://duckduckgo.com/about">
+        				About DuckDuckGo
+        				<span class="logo_homepage__tt">Duck it!</span>
+        			</a>
+              <div id="duckduckgo">DuckDuckSlow</div>
+		        </div>
+
+      			<div class="search-wrap--home">
+      		    <form onsubmit="load()" id="search_form_homepage" class="search  search--home  js-search-form" name="x" action="https://duckduckgo.com/html">
+          			<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" value="q" tabindex="1" value="">
+          			<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
+          			<input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
+          			<div id="search_elements_hidden" class="search__hidden  js-search-hidden"></div>
+        		  </form>
+      			</div>
+            <div class="tag-home">
+              <div class="tag-home__wrapper">
+                <div class="tag-home__item">
+                  The search engine that doesn't rush.
+                  <span class="hide--screen-xs"><a href="https://duckduckgo.com/about" class="tag-home__link">Learn More</a>.</span>
+                  <div id="loading-bar">
+                    <div id="progress"></div>
+                    Loading - <span id="percent"></span>%
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tag-home  tag-home--slide  no-js__hide  js-tag-home"></div>
+            <div id="error_homepage"></div>
+      		</div>
+      	</div>
+      </div>
+      <div id="footer_homepage" class="foot-home  js-foot-home"></div>
+      <div id="copyright">Dax (the DuckDuckGo mascot), the word “DuckDuckGo”, and all terrible "DuckDuckGo" puns are copyrighted by <a href="https://duckduckgo.com">DuckDuckGo</a></div>
+    </div>
+  </body>
+</html>
