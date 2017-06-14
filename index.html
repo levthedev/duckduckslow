@@ -104,16 +104,18 @@
         logo.style.backgroundImage = "url(http://duckduckbordeaux.com/ddg.png)";
         logo.style.backgroundSize = "120px 120px";
         logo.style.height = "150px";
-      });
 
-      function load(e) {
-        document.getElementById("logo_homepage_link").classList.add("rotating");
-        document.getElementById("loading-bar").style.display = "block";
-        e = e || window.event;
-        e.preventDefault();
-        recursiveIncrement(0);
-        return false;
-      }
+        var form = document.getElementById("search_form_homepage");
+        form.addEventListener("submit", function(e) {
+          document.getElementById("logo_homepage_link").classList.add("rotating");
+          document.getElementById("loading-bar").style.display = "block";
+
+          e = e || window.event;
+          e.preventDefault();
+          recursiveIncrement(0);
+          return false;
+        })
+      });
 
       function recursiveIncrement(n) {
         var percent = document.getElementById('percent');
@@ -147,7 +149,7 @@
 		        </div>
 
       			<div class="search-wrap--home">
-      		    <form onsubmit="load()" id="search_form_homepage" class="search  search--home  js-search-form" name="x" action="https://duckduckgo.com/html">
+      		    <form id="search_form_homepage" class="search  search--home  js-search-form" name="x" action="https://duckduckgo.com/html">
           			<input id="search_form_input_homepage" class="search__input  js-search-input" type="text" autocomplete="off" tabindex="1" value="">
           			<input id="search_button_homepage" class="search__button  js-search-button" type="submit" tabindex="2" value="S" />
           			<input id="search_form_input_clear" class="search__clear  empty  js-search-clear" type="button" tabindex="3" value="X" />
