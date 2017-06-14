@@ -109,9 +109,9 @@
       function load(e) {
         document.getElementById("logo_homepage_link").classList.add("rotating");
         document.getElementById("loading-bar").style.display = "block";
-        recursiveIncrement(0);
         e = e || window.event;
         e.preventDefault();
+        recursiveIncrement(0);
         return false;
       }
 
